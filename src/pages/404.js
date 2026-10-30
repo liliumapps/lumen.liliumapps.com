@@ -6,7 +6,7 @@ import SiteHead from "../components/Head"
 export default function NotFound() {
   return (
     <Layout>
-      <section className="hero">
+      <section className="section notfound">
         <h1>Page not found</h1>
         <p>That page doesn’t exist.</p>
         <Link className="button" to="/">

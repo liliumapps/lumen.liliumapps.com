@@ -9,22 +9,28 @@ export default function Layout({ children }) {
           email
           studio
           developerPage
+          googlePlay
         }
       }
     }
   `)
-  const { email, studio, developerPage } = site.siteMetadata
+  const { email, studio, developerPage, googlePlay } = site.siteMetadata
   return (
     <>
       <header className="nav">
-        <Link to="/" className="nav-logo" aria-label="Lumen home">
-          <img src="/icon-192.png" alt="" width="36" height="36" />
-          <span>Lumen</span>
-        </Link>
-        <nav>
-          <a href="/#features">Features</a>
-          <Link to="/privacy/">Privacy</Link>
-        </nav>
+        <div className="nav-pill">
+          <Link to="/" className="nav-logo" aria-label="Lumen home">
+            <img src="/icon-192.png" alt="" width="30" height="30" />
+            <span>Lumen</span>
+          </Link>
+          <nav>
+            <a href="/#features">Features</a>
+            <Link to="/privacy/">Privacy</Link>
+            <a className="nav-cta" href={googlePlay}>
+              Get the app
+            </a>
+          </nav>
+        </div>
       </header>
       <main>{children}</main>
       <footer className="footer">
