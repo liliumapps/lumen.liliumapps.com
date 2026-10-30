@@ -105,4 +105,10 @@ export default function Privacy() {
   )
 }
 
-export const Head = () => <SiteHead title="Privacy policy" />
+export const Head = ({ location }) => (
+  <SiteHead
+    title="Privacy policy"
+    description="Lumen collects no personal data: no account, no analytics, no ads. Your files stay on your device."
+    pathname={location.pathname}
+  />
+)

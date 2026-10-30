@@ -147,4 +147,19 @@ export default function Home() {
   )
 }
 
-export const Head = () => <SiteHead />
+// Structured data so search results can show Lumen as an app.
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  name: "Lumen - File manager",
+  operatingSystem: "Android",
+  applicationCategory: "UtilitiesApplication",
+  description: "A private, fast file manager for Android. No account, no tracking.",
+  url: "https://lumen.liliumapps.com/",
+  image: "https://lumen.liliumapps.com/icon-512.png",
+  installUrl: "https://play.google.com/store/apps/details?id=com.liliumapps.lumenfiles",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  author: { "@type": "Organization", name: "Lilium Apps", url: "https://liliumapps.com" },
+}
+
+export const Head = ({ location }) => <SiteHead pathname={location.pathname} jsonLd={JSON_LD} />
