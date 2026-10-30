@@ -2,7 +2,7 @@
 module.exports = {
   siteMetadata: {
     title: "Lumen",
-    description: "A private, fast file manager for Android. No account, no ads, no tracking.",
+    description: "A private, fast file manager for Android. No account, no tracking.",
     siteUrl: "https://lumen.liliumapps.com",
     email: "liliumappshq@gmail.com",
     studio: "https://liliumapps.com",

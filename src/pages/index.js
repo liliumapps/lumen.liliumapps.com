@@ -2,45 +2,45 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SiteHead from "../components/Head"
-import DemoVideo from "../components/DemoVideo"
+import PhoneScreen from "../components/PhoneScreen"
 
-// Each feature has a clip of its own (static/videos/<video>.mp4; see RECORDING.md).
+// Each feature has a screenshot of its own: static/screens/<screen>.webp (see README).
 const FEATURES = [
   {
-    video: "browse",
+    screen: "browse",
     eyebrow: "Browse",
     title: "Every folder, and inside every zip",
     body: "Internal storage, SD cards, and USB drives in lists or grids, with tabs. Open a zip, 7z, or RAR like any folder.",
   },
   {
-    video: "search",
+    screen: "search",
     eyebrow: "Search",
     title: "Find anything in seconds",
     body: "Names, paths, and types across all your storage, with filters for size and date. The index stays on your phone.",
   },
   {
-    video: "preview",
+    screen: "preview",
     eyebrow: "Preview",
     title: "Open it right here",
     body: "PDFs, Word documents, spreadsheets, Markdown, code, e-books, music, and video, without another app.",
   },
   {
-    video: "analyze",
+    screen: "analyze",
     eyebrow: "Free up space",
     title: "See what's using space",
     body: "The largest files, exact duplicates, blurry photos, and what each app keeps. Nothing goes until you review it.",
   },
   {
-    video: "photos",
+    screen: "photos",
     eyebrow: "Photos and videos",
     title: "A gallery that's also a file manager",
     body: "Every photo by day and month, full screen with a swipe, and the same move, share, and trash as any file.",
   },
   {
-    video: "share",
+    screen: "share",
     eyebrow: "Share",
-    title: "Your phone's files on your computer",
-    body: "Open them in any browser on the same Wi-Fi. Off until you turn it on, and every computer needs your approval.",
+    title: "Send files across your Wi-Fi",
+    body: "Between your phones with no cable and no cloud, or to any computer's browser. Off until you turn it on, and every device needs your approval.",
   },
 ]
 
@@ -52,7 +52,7 @@ const MORE = [
 
 const PRINCIPLES = [
   ["No account", "Nothing to sign up for. Lumen works the moment you open it."],
-  ["No ads, no tracking", "No analytics, no ad networks, nothing that watches what you do."],
+  ["No tracking", "No analytics, nothing that watches what you do."],
   ["Your files stay put", "Nothing leaves your phone unless you share it, and then only to whom you choose."],
 ]
 
@@ -77,8 +77,8 @@ export default function Home() {
             </p>
             <h1>Every file on your phone. Fast, private, and yours.</h1>
             <p className="hero-sub">
-              Lumen is a file manager for Android that browses, finds, previews, and cleans up, with no account,
-              no ads, and no tracking.
+              Lumen is a file manager for Android that browses, finds, previews, and cleans up, with no account
+              and no tracking.
             </p>
             <div className="hero-actions">
               <a className="button light" href={play}>
@@ -91,7 +91,7 @@ export default function Home() {
             <p className="hero-note">Free · Android 8 and up · Phones, tablets, and foldables</p>
           </div>
           <div className="hero-media">
-            <DemoVideo name="hero" label="Lumen's home screen, opening the photos" eager />
+            <PhoneScreen name="hero" label="Lumen's home screen: storage, recent files, and file types" eager />
           </div>
         </div>
       </section>
@@ -100,10 +100,10 @@ export default function Home() {
         <p className="eyebrow center">What you get</p>
         <h2 className="center">A file manager that feels like the rest of your phone</h2>
         <div className="bento">
-          {FEATURES.map(({ video, eyebrow, title, body }) => (
-            <article key={video} className="feature">
+          {FEATURES.map(({ screen, eyebrow, title, body }) => (
+            <article key={screen} className="feature">
               <div className="feature-media">
-                <DemoVideo name={video} label={title} />
+                <PhoneScreen name={screen} label={title} />
               </div>
               <div className="feature-text">
                 <p className="eyebrow">{eyebrow}</p>
