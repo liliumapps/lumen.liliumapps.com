@@ -3,8 +3,8 @@ import Layout from "../components/Layout"
 import SiteHead from "../components/Head"
 
 // Keep this in step with what the app does. Update UPDATED whenever it changes,
-// and before shipping anything that collects or shares data (ads, purchases).
-const UPDATED = "11 October 2026"
+// and before shipping anything that collects or shares data.
+const UPDATED = "4 November 2026"
 
 export default function Privacy() {
   return (
@@ -22,7 +22,7 @@ export default function Privacy() {
         <h2>The short version</h2>
         <ul>
           <li>We don't collect, store, or sell any personal data.</li>
-          <li>Lumen has no account, no analytics, no advertising, and no crash reporting.</li>
+          <li>Lumen has no account, no analytics, and no crash reporting.</li>
           <li>Your files never leave your device unless you choose to share them.</li>
         </ul>
 
@@ -91,8 +91,8 @@ export default function Privacy() {
 
         <h2>Changes</h2>
         <p>
-          If we add features that change how data is handled, such as ads or in-app purchases, we'll
-          update this policy before those features ship and change the date above.
+          If we add features that change how data is handled, we'll update this policy before those
+          features ship and change the date above.
         </p>
 
         <h2>Contact</h2>
@@ -108,7 +108,7 @@ export default function Privacy() {
 export const Head = ({ location }) => (
   <SiteHead
     title="Privacy policy"
-    description="Lumen collects no personal data: no account, no analytics, no ads. Your files stay on your device."
+    description="Lumen collects no personal data: no account, no analytics, no tracking. Your files stay on your device."
     pathname={location.pathname}
   />
 )
