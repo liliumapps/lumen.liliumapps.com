@@ -25,6 +25,7 @@ export default function Layout({ children }) {
           </Link>
           <nav>
             <a href="/#features">Features</a>
+            <a href="/#faq">FAQ</a>
             <Link to="/privacy/">Privacy</Link>
             <a className="nav-cta" href={googlePlay}>
               Get the app
