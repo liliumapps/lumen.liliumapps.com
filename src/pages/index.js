@@ -4,7 +4,8 @@ import Layout from "../components/Layout"
 import SiteHead from "../components/Head"
 import PhoneScreen from "../components/PhoneScreen"
 import Faq, { faqJsonLd } from "../components/Faq"
-import { features, more, principles, faq } from "../data/content"
+import Reviews from "../components/Reviews"
+import { features, more, principles, reviews, reviewSources, faq } from "../data/content"
 
 export default function Home() {
   const { site } = useStaticQuery(graphql`
@@ -85,6 +86,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <Reviews items={reviews} sources={reviewSources} />
 
       <Faq items={faq} />
 

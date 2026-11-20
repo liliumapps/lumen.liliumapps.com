@@ -90,6 +90,72 @@ const faq = [
   ],
 ]
 
+// Where reviews come from. Add a source here (say, reddit) and use its key in
+// a review below; the home page links each review to its source.
+const reviewSources = {
+  play: {
+    label: "Google Play",
+    // Play shows reviews by the visitor's country, and only India has them
+    // yet, so pin it (the web honours gl; the Play app on a phone ignores it).
+    // Drop gl once other countries show reviews.
+    url: "https://play.google.com/store/apps/details?id=com.liliumapps.lumenfiles&hl=en&gl=IN",
+  },
+}
+
+// What people say, quoted word for word from public reviews ("…" marks a cut;
+// never reword one). Authors as first name and initial. `url` is optional and
+// links the review itself where the source has one (Reddit does, Play doesn't).
+// Play rating as of 20 Nov 2026: 4.8 from 20 reviews.
+const reviews = [
+  {
+    source: "play",
+    author: "Moses S.",
+    rating: 5,
+    date: "2026-10-27",
+    quote:
+      "Found it very appealing and attractive from the screenshots. Installed it and loving every minute of using it. Amazing work done. Just switched from Solid Explorer, and have no intention of going back.",
+  },
+  {
+    source: "play",
+    author: "Ichotu",
+    rating: 5,
+    date: "2026-10-22",
+    quote:
+      "One of the best file managers I’ve used. The UI is intuitive, indexing is accurate, and file organization works flawlessly. You can tell a lot of thought has gone into the details.",
+  },
+  {
+    source: "play",
+    author: "Amd Ryzen",
+    rating: 5,
+    date: "2026-10-23",
+    quote:
+      "Great file Manager! Really good looking, modern and clean. … Opens files faster than MiXplorer and so on. … I'm surprised it's not paid and totally free from trackers.",
+  },
+  {
+    source: "play",
+    author: "Yo Yo",
+    rating: 4,
+    date: "2026-10-30",
+    quote:
+      "Really liking this app so far! Clean, modern, easy to use, and packed with useful features. Love that it's completely free and ad-free right now.",
+  },
+  {
+    source: "play",
+    author: "Hamza G.",
+    rating: 5,
+    date: "2026-10-22",
+    quote:
+      "I already use some good file managers, like MiXplorer and a few others. … I was planning to uninstall it after reviewing, but I'm actually keeping it for now.",
+  },
+  {
+    source: "play",
+    author: "Vijay B.",
+    rating: 5,
+    date: "2026-11-18",
+    quote: "Best file manager... no doubt",
+  },
+]
+
 // Short facts for llms.txt.
 const facts = [
   "On Google Play",
@@ -99,4 +165,4 @@ const facts = [
   "Made by Lilium Apps (https://liliumapps.com)",
 ]
 
-module.exports = { features, more, principles, faq, facts }
+module.exports = { features, more, principles, reviews, reviewSources, faq, facts }
