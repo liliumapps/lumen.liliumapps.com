@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SiteHead from "../components/Head"
+import { utm } from "../utm"
 import PhoneScreen from "../components/PhoneScreen"
 import Faq, { faqJsonLd } from "../components/Faq"
 import Reviews from "../components/Reviews"
@@ -32,7 +33,7 @@ export default function Home() {
               and no tracking.
             </p>
             <div className="hero-actions">
-              <a className="button light" href={play}>
+              <a className="button light" href={utm(play, "hero")}>
                 Get it on Google Play
               </a>
               <a className="button ghost" href="#features">
@@ -94,7 +95,7 @@ export default function Home() {
       <section className="cta">
         <h2>Try Lumen today</h2>
         <p>Free on Google Play.</p>
-        <a className="button" href={play}>
+        <a className="button" href={utm(play, "cta")}>
           Get it on Google Play
         </a>
       </section>

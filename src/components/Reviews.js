@@ -1,4 +1,5 @@
 import React from "react"
+import { utm } from "../utm"
 
 /**
  * Quotes from public reviews (src/data/content.js), each credited to its
@@ -25,7 +26,7 @@ export default function Reviews({ items, sources }) {
               </blockquote>
               <figcaption>
                 <strong>{author}</strong> on{" "}
-                <a href={url || from.url} rel="noopener noreferrer">
+                <a href={utm(url || from.url, "reviews")} rel="noopener noreferrer">
                   {from.label}
                 </a>
               </figcaption>
@@ -37,7 +38,7 @@ export default function Reviews({ items, sources }) {
         {Object.values(sources).map(({ label, url }, i) => (
           <React.Fragment key={label}>
             {i > 0 && " · "}
-            <a href={url}>More reviews on {label}</a>
+            <a href={utm(url, "more_reviews")}>More reviews on {label}</a>
           </React.Fragment>
         ))}
       </p>

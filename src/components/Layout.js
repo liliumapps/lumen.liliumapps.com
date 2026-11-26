@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import { utm } from "../utm"
 
 export default function Layout({ children }) {
   const { site } = useStaticQuery(graphql`
@@ -27,7 +28,7 @@ export default function Layout({ children }) {
             <a href="/#features">Features</a>
             <a href="/#faq">FAQ</a>
             <Link to="/privacy/">Privacy</Link>
-            <a className="nav-cta" href={googlePlay}>
+            <a className="nav-cta" href={utm(googlePlay, "header")}>
               Get the app
             </a>
           </nav>
@@ -35,12 +36,12 @@ export default function Layout({ children }) {
       </header>
       <main>{children}</main>
       <footer className="footer">
-        <a className="made-by" href={studio}>
+        <a className="made-by" href={utm(studio, "footer")}>
           <img src="/lilium-mark.svg" alt="" width="22" height="22" />
           <span>Made by Lilium Apps</span>
         </a>
         <span>
-          <a href={`mailto:${email}`}>{email}</a> · <a href={developerPage}>More apps</a> ·{" "}
+          <a href={`mailto:${email}`}>{email}</a> · <a href={utm(developerPage, "more_apps")}>More apps</a> ·{" "}
           <Link to="/privacy/">Privacy</Link>
         </span>
       </footer>
